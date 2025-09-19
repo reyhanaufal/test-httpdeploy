@@ -1,0 +1,311 @@
+/* ==================
+   GLOBAL & VARIABLES
+   ================== */
+:root {
+    --primary-color: #FF4500; /* Oranye Terang */
+    --dark-color: #212121;    /* Abu-abu Sangat Gelap */
+    --light-color: #FFFFFF;   /* Putih */
+    --bg-light-color: #F5F5F5;/* Latar Belakang Abu-abu Terang */
+    --font-heading: 'Anton', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background: var(--light-color);
+    color: var(--dark-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 400; /* Anton is naturally bold */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+p { margin-bottom: 1rem; }
+.lead { font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;}
+.text-center { text-align: center; }
+.text-light { color: var(--light-color); }
+
+.section-padding { padding: 60px 0; }
+.section-title { text-align: center; margin-bottom: 40px; }
+.bg-light { background: var(--bg-light-color); }
+.bg-dark { background: var(--dark-color); }
+
+
+/* ==================
+   BUTTONS & UTILITIES
+   ================== */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--light-color);
+}
+
+.btn-secondary {
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* ==================
+   HEADER & NAVIGATION
+   ================== */
+#main-header {
+    background: rgba(33, 33, 33, 0.9);
+    color: var(--light-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+.btn-nav {
+    padding: 8px 18px;
+    margin-left: 15px;
+    background: var(--primary-color);
+    color: var(--light-color);
+}
+
+
+/* ==================
+   SECTIONS
+   ================== */
+
+/* Hero */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1599602143243-72216fde426a?q=80&w=1931&auto=format&fit=crop) no-repeat center center/cover;
+    height: 100vh;
+    color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#hero .hero-content {
+    max-width: 800px;
+}
+
+#hero h1 {
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+/* Problem */
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.problem-card .icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--light-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.service-card .service-content {
+    padding: 25px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+}
+
+/* Market */
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin: 40px 0;
+}
+
+.stat-item .stat-number {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--primary-color);
+}
+
+.stat-item .stat-label {
+    font-weight: 700;
+}
+.market-closing { font-weight: 700; margin-top: 30px;}
+
+/* Process */
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+.process-step .step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 15px auto;
+}
+
+/* Contact Form */
+#contact-form {
+    max-width: 800px;
+    margin: 30px auto 0 auto;
+}
+.form-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #333;
+    color: var(--light-color);
+    font-family: var(--font-body);
+}
+#contact-form textarea {
+    resize: vertical;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+#main-footer {
+    background: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* ==================
+   RESPONSIVE DESIGN
+   ================== */
+@media(max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    #main-header .container {
+        flex-direction: column;
+    }
+    #navbar ul { margin-top: 10px; }
+
+    .problem-grid, .services-grid, .process-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
